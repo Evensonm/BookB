@@ -11,7 +11,7 @@ import "./Books.css";
 function Books() {
     const [books, setBooks] = useState([]);
     useEffect(() => {
-        axios(`https://unit3-bookbuddy-api-6ea9.onrender.com/api/books`)
+        axios(`https://fsa-book-buddy-b6e748d1380d.herokuapp.com/api/books`)
             .then((data) => {
                 
                 setBooks(data.data.books);
@@ -46,8 +46,7 @@ function Books() {
 
 
 
-                )
-            })}
+                )})};
 
 
 
