@@ -3,7 +3,8 @@ import Books from "./components/Books";
 import Login from "./components/Login";
 import Navigations from "./components/Navigations";
 import Register from "./components/Register";
-import SingleBook from "./components//SingleBook";
+import SingleBook from "./components/SingleBook";
+import Return from "./components/Return";
 import { useState, useEffect } from 'react';
 import bookLogo from './assets/books.png';
 import { Routes, Route, Link } from "react-router-dom";
@@ -33,6 +34,7 @@ function App() {
         <Link to="/login">Login</Link>
         <Link to="/account">My Account Information</Link>
         <Link to="/register">Register to Checkout Books</Link>
+        <Link to="/return">Return Books</Link>
         <button onClick={handleLogout}>Logout</button>
       </div> 
     
@@ -45,7 +47,9 @@ function App() {
         <Route path="/login" 
           element={<Login setToken={setToken} token={token} />} />
         <Route path="/register" element={<Register />} />;
+        <Route path="/return" element={<Return token={token} />} />;
         <Route path="*" element={<Books />} />;
+
 
 
       </Routes>
