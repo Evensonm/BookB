@@ -11,7 +11,7 @@ import "./Books.css";
 function Books() {
     const [books, setBooks] = useState([]);
     useEffect(() => {
-        axios(`https://fsa-book-buddy-b6e748d1380d.herokuapp.com/api/books`)
+        axios(`${import.meta.env.VITE_BOOK_URL}/api/books`)
             .then((data) => {
                 
                 setBooks(data.data.books);

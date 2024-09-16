@@ -21,7 +21,7 @@ function Login({ setToken, token }) {
     e.preventDefault();
     try {
       axios
-        .post(`https://fsa-book-buddy-b6e748d1380d.herokuapp.com/api/users/login`, formData)
+        .post(`${import.meta.env.VITE_BOOK_URL}/api/users/login`, formData)
         .then((response) => {
           console.log(response.data.message);
           if (response.data.message) {

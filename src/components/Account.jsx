@@ -11,7 +11,7 @@ function Account({token}) {
   const { id } = useParams();
     useEffect(() => {
         axios
-        .get(`https://fsa-book-buddy-b6e748d1380d.herokuapp.com/api/users/me`, 
+        .get(`${import.meta.env.VITE_BOOK_URL}/api/users/me`, 
           {headers: {
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${token}`
@@ -29,7 +29,7 @@ function Account({token}) {
   
     const [userRes, setUserRes] = useState([]);
     useEffect(() => {
-        axios(`https://fsa-book-buddy-b6e748d1380d.herokuapp.com/api/reservations`, 
+        axios(`${import.meta.env.VITE_BOOK_URL}/api/reservations`, 
           {headers: {
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${token}`
@@ -45,7 +45,7 @@ console.log(userRes);
 
   const [books, setBooks] = useState([]);
   useEffect(() => {
-      axios(`https://fsa-book-buddy-b6e748d1380d.herokuapp.com/api/books`)
+      axios(`${import.meta.env.VITE_BOOK_URL}/api/books`)
           .then((data) => {
               
               setBooks(data.data.books);
