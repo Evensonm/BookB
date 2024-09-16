@@ -16,7 +16,7 @@ function Register() {
     e.preventDefault();
     try {
       axios
-        .post(`https://fsa-book-buddy-b6e748d1380d.herokuapp.com/api/users/register`, formData)
+        .post(`${import.meta.env.VITE_BOOK_URL}/api/users/register`, formData)
         .then((response) => {
           console.log(response);
           if (response.data.success) {
