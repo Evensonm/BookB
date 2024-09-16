@@ -10,9 +10,9 @@ import "./Books.css";
 
 function Books() {
     const [books, setBooks] = useState([]);
-    
+
     useEffect(() => {
-        axios(`${import.meta.env.VITE_BOOK_URL}/api/books`)
+        axios(`${import.meta.env.VITE_BOOK_URL}api/books`)
             .then((data) => {
                 const allBooks = data.data
                 setBooks(allBooks);
