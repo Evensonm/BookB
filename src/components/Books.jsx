@@ -10,11 +10,12 @@ import "./Books.css";
 
 function Books() {
     const [books, setBooks] = useState([]);
+    
     useEffect(() => {
         axios(`${import.meta.env.VITE_BOOK_URL}/api/books`)
             .then((data) => {
-                
-                setBooks(data.data.books);
+                const allBooks = data.data
+                setBooks(allBooks);
             })
             .catch((err) => console.log(err));
 
@@ -30,7 +31,7 @@ function Books() {
         
         
         <div className="main-layout">
-            {books.map(function (data) {
+            {books?.map(function (data) {
                 return (
                     <div className="book-card" key={data}>
                         Title: {data.title}
